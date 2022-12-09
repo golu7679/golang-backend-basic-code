@@ -1,4 +1,4 @@
-module github.com/golu7679/go-todo
+module github.com/golu7679/golang-backend-basic-code
 
 go 1.19
 
