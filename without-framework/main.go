@@ -155,7 +155,7 @@ func updateTodo(w http.ResponseWriter, r *http.Request) {
 
 	if t.Title == "" {
 		rnd.JSON(w, http.StatusBadRequest, renderer.M{
-			"message": "The title filed is reuired",
+			"message": "The title filed is required",
 		})
 		return
 	}
