@@ -126,7 +126,7 @@
             }else{
               this.showError = false;
               if(this.enableEdit){
-                this.$http.put('todo/'+this.todo.id, this.todo).then(response => {
+                this.$http.put('todo/'+this.todo._id, this.todo).then(response => {
                   if(response.status == 200){
                     this.todos[this.todo.todoIndex] = this.todo;
                   }
@@ -155,7 +155,7 @@
             }else{
               completedToggle = true;
             }
-            this.$http.put('todo/'+todo.id, {id: todo.id, title: todo.title, completed: completedToggle}).then(response => {
+            this.$http.put('todo/'+todo._id, {id: todo._id, title: todo.title, completed: completedToggle}).then(response => {
               if(response.status == 200){
                 this.todos[todoIndex].completed = completedToggle;
               }
@@ -168,7 +168,7 @@
           },
           deleteTodo(todo, todoIndex){
             if(confirm("Are you sure ?")){
-              this.$http.delete('todo/'+todo.id).then(response => {
+              this.$http.delete('todo/'+todo._id).then(response => {
                 if(response.status == 200){
                   this.todos.splice(todoIndex, 1);
                   this.todo = {id: '', title: '', completed: false};
