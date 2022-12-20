@@ -1,0 +1,1 @@
+docker build -t golang-basic . && docker run -p 8080:8081 -it golang-basic
